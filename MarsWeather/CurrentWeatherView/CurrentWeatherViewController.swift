@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension Constants {
+    struct CurrentWeather {
+        static let historicalWeatherSegueId = "historicalWeatherSegue"
+    }
+}
+
 class CurrentWeatherViewController: UIViewController {
     
     //MARK: - Variables
@@ -34,7 +40,7 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var solLabel: UILabel!
     @IBOutlet weak var sunriseTimeLabel: UILabel!
     @IBOutlet weak var sunsetTimeLabel: UILabel!
-    @IBOutlet weak var windSpeedImageView: UIImageView!
+    @IBOutlet weak var windDirectionLabel: UILabel!
     @IBOutlet weak var windSpeedLabel: UILabel!
 
     //MARK: - Lifecycle
@@ -44,6 +50,14 @@ class CurrentWeatherViewController: UIViewController {
 
         NetworkUtility.getCurrentWeatherData { [weak self] weatherData in
             self?.currentWeather = weatherData
+        }
+    }
+    
+    //MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.CurrentWeather.historicalWeatherSegueId {
+            segue.destination.title = "Last 7 Sols"
         }
     }
     
@@ -63,12 +77,13 @@ class CurrentWeatherViewController: UIViewController {
         
         atmosOpacityLabel.text = weatherData.atmosphericOpacity.rawValue
         dateLabel.text = weatherData.earthDate.longDateString()
-        highTempLabel.text = "\(weatherData.maxTempF) °F"
-        lowTempLabel.text = "\(weatherData.minTempF) °F"
-        solLabel.text = "Sol \(weatherData.marsDate)"
+        highTempLabel.text = weatherData.getHighTempString()
+        lowTempLabel.text = weatherData.getLowTempString()
+        solLabel.text = weatherData.getSolDateString()
         sunriseTimeLabel.text = weatherData.sunriseDate.shortTimeString()
         sunsetTimeLabel.text = weatherData.sunsetDate.shortTimeString()
-        windSpeedLabel.text = "\(weatherData.windSpeed) M/S"
+        windDirectionLabel.text = weatherData.windDirection.rawValue
+        windSpeedLabel.text = weatherData.getWindSpeedString()
     }
 
 }

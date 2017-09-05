@@ -32,9 +32,11 @@ extension Constants {
 struct WeatherData {
     typealias keys = Constants.WeatherDataKeys
     
+    //MARK: - Variables
+    
     //After looking at the API, it appears that most of these values are guaranteed, so I've
-    //left them as non-nullable. However, if that ends up crashing things, I will need to
-    //re-evaluate my approach.
+    //left them as non-nullable. However, that's not the safest approach, so a better solution
+    //would be to either have default values or better UI in the case that data doesn't exist
     let atmosphericOpacity: AtmosphericOpacity
     let earthDate: Date
     let humidity: Float?
@@ -51,6 +53,8 @@ struct WeatherData {
     let sunsetDate: Date
     let windDirection: WindDirection
     let windSpeed: Float?
+    
+    //MARK: - Initialization
     
     init(json: [String : Any]) {
         atmosphericOpacity = AtmosphericOpacity(value: json[keys.atmosphericOpacity] as? String)
@@ -69,5 +73,35 @@ struct WeatherData {
         sunsetDate = Date.dateFromISO8601String(json[keys.sunsetDate] as? String) ?? Date()
         windDirection = WindDirection(value: json[keys.windDirection] as? String)
         windSpeed = json[keys.windSpeed] as? Float
+    }
+    
+    //MARK: - String conversions
+    
+    func getHighTempString(isFahrenheit: Bool = true) -> String {
+        if isFahrenheit {
+            return "\(maxTempF) °F"
+        } else {
+            return "\(maxTempC) °C"
+        }
+    }
+    
+    func getLowTempString(isFahrenheit: Bool = true) -> String {
+        if isFahrenheit {
+            return "\(minTempF) °F"
+        } else {
+            return "\(minTempC) °C"
+        }
+    }
+    
+    func getSolDateString() -> String {
+        return "Sol \(marsDate)"
+    }
+    
+    func getWindSpeedString() -> String {
+        guard let windSpeed = windSpeed else {
+            return "No wind today"
+        }
+        
+        return "\(windSpeed) M/S"
     }
 }

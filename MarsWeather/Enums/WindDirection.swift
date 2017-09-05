@@ -30,15 +30,15 @@ extension Constants {
 enum WindDirection: String {
     typealias values = Constants.WindDirectionValues
     
-    case east
-    case none
-    case north
-    case northEast
-    case northWest
-    case south
-    case southEast
-    case southWest
-    case west
+    case east = "→"
+    case none = "—"
+    case north = "↑"
+    case northEast = "↗"
+    case northWest = "↖"
+    case south = "↓"
+    case southEast = "↘"
+    case southWest = "↙"
+    case west = "←"
     
     init(value: String?) {
         guard let value = value else {

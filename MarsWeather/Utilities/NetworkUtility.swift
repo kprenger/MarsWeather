@@ -33,9 +33,13 @@ class NetworkUtility {
                 let data = response.result.value as? [String : Any],
                 let results = data["results"] as? [[String : Any]] else { return }
             
-            var weatherArray = [WeatherData]()
+            var weatherArray: [WeatherData] = []
             for weather in results {
                 weatherArray.append(WeatherData(json: weather))
+            }
+            
+            if weatherArray.count > 7 {
+                weatherArray = Array(weatherArray[0...6])
             }
             
             completion(weatherArray)

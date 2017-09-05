@@ -21,6 +21,8 @@
 		F86F81331F5E430600BEDF8E /* WindDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F81321F5E430600BEDF8E /* WindDirection.swift */; };
 		F86F81351F5E45B100BEDF8E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F81341F5E45B100BEDF8E /* Constants.swift */; };
 		F86F81391F5E4B7200BEDF8E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F81381F5E4B7200BEDF8E /* DateExtension.swift */; };
+		F86F813B1F5F0D2400BEDF8E /* HistoricalWeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86F813A1F5F0D2400BEDF8E /* HistoricalWeatherTableViewController.swift */; };
+		F8D30BCA1F5F0ED900537F48 /* HistoricalWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D30BC91F5F0ED900537F48 /* HistoricalWeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		F86F81321F5E430600BEDF8E /* WindDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindDirection.swift; sourceTree = "<group>"; };
 		F86F81341F5E45B100BEDF8E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F86F81381F5E4B7200BEDF8E /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		F86F813A1F5F0D2400BEDF8E /* HistoricalWeatherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricalWeatherTableViewController.swift; sourceTree = "<group>"; };
+		F8D30BC91F5F0ED900537F48 /* HistoricalWeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricalWeatherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 		F86F812B1F5E3B9B00BEDF8E /* HistoricalWeatherView */ = {
 			isa = PBXGroup;
 			children = (
+				F8D30BC91F5F0ED900537F48 /* HistoricalWeatherTableViewCell.swift */,
+				F86F813A1F5F0D2400BEDF8E /* HistoricalWeatherTableViewController.swift */,
 			);
 			path = HistoricalWeatherView;
 			sourceTree = "<group>";
@@ -305,7 +311,9 @@
 				F86F81311F5E42CD00BEDF8E /* Pressure.swift in Sources */,
 				F86F811C1F59D1AE00BEDF8E /* WeatherData.swift in Sources */,
 				F86F81391F5E4B7200BEDF8E /* DateExtension.swift in Sources */,
+				F8D30BCA1F5F0ED900537F48 /* HistoricalWeatherTableViewCell.swift in Sources */,
 				F86F80FA1F59B18500BEDF8E /* AppDelegate.swift in Sources */,
+				F86F813B1F5F0D2400BEDF8E /* HistoricalWeatherTableViewController.swift in Sources */,
 				F86F812D1F5E3BFC00BEDF8E /* CurrentWeatherViewController.swift in Sources */,
 				F86F81331F5E430600BEDF8E /* WindDirection.swift in Sources */,
 				F86F81351F5E45B100BEDF8E /* Constants.swift in Sources */,
