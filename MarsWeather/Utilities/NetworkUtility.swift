@@ -14,28 +14,32 @@ class NetworkUtility {
     private static let latestURL = URL(string: "http://marsweather.ingenology.com/v1/latest/")!
     private static let archiveURL = URL(string: "http://marsweather.ingenology.com/v1/archive/")!
     
-    static func getCurrentWeatherData() -> [WeatherData] {
+    static func getCurrentWeatherData(completion: @escaping (WeatherData?) -> ()) {
         Alamofire.request(latestURL).responseJSON { response in
             guard response.result.isSuccess,
                 let data = response.result.value as? [String : Any],
-                let report = data["report"] as? [String : Any] else { return }
+                let report = data["report"] as? [String : Any] else {
+                    completion(nil)
+                    return
+            }
             
-            print(report)
+            completion(WeatherData(json: report))
         }
-        
-        return []
     }
     
-    static func getArchiveWeatherData() -> [WeatherData] {
+    static func getArchiveWeatherData(completion: @escaping ([WeatherData]?) -> ()) {
         Alamofire.request(archiveURL).responseJSON { response in
             guard response.result.isSuccess,
                 let data = response.result.value as? [String : Any],
                 let results = data["results"] as? [[String : Any]] else { return }
             
-            print(results)
+            var weatherArray = [WeatherData]()
+            for weather in results {
+                weatherArray.append(WeatherData(json: weather))
+            }
+            
+            completion(weatherArray)
         }
-        
-        return []
     }
     
 }
