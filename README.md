@@ -18,4 +18,5 @@ This project uses [Carthage](https://github.com/Carthage/Carthage) to manage dep
 
 ## Attribution
 * sun by Eucalyp from the Noun Project
+* Mars image by OSIRIS from ESA
 
