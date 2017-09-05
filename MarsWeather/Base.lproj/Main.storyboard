@@ -37,6 +37,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mars" translatesAutoresizingMaskIntoConstraints="NO" id="ayl-bI-xhL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfG-Oe-rnx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -115,7 +118,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CSI-PZ-4Dg">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sunny" translatesAutoresizingMaskIntoConstraints="NO" id="CSI-PZ-4Dg">
                                                 <rect key="frame" x="54" y="224" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="had-Sr-trt"/>
@@ -160,10 +163,13 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dC-1l-s0u">
                                                 <rect key="frame" x="16" y="464" width="343" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="du0-P1-at1"/>
                                                 </constraints>
-                                                <state key="normal" title="Last 7 sols"/>
+                                                <state key="normal" title="Last 7 sols">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="Yh9-e6-Hfe" kind="show" identifier="historicalWeatherSegue" id="284-ac-Kzh"/>
                                                 </connections>
@@ -179,7 +185,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="gjH-fm-cRz" firstAttribute="top" secondItem="g4d-3m-9QD" secondAttribute="bottom" constant="4" id="0Ew-vD-WIe"/>
                                             <constraint firstAttribute="trailing" secondItem="xpr-Ub-zgf" secondAttribute="trailing" id="1Gn-Wr-Npu"/>
@@ -245,6 +250,7 @@
                                             <constraint firstAttribute="width" constant="20" id="lil-fj-vJf"/>
                                             <constraint firstAttribute="height" constant="20" id="vgS-41-A1R"/>
                                         </constraints>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching data from Mars..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiC-Vd-nB1">
                                         <rect key="frame" x="8" y="273" width="359" height="21"/>
@@ -252,11 +258,10 @@
                                             <constraint firstAttribute="height" constant="21" id="maD-lK-sLz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="fiC-Vd-nB1" firstAttribute="centerY" secondItem="7L7-Hd-9FZ" secondAttribute="centerY" constant="-18" id="4en-tB-STb"/>
                                     <constraint firstItem="Yck-nY-dcw" firstAttribute="centerX" secondItem="7L7-Hd-9FZ" secondAttribute="centerX" id="ALY-1o-Omt"/>
@@ -272,12 +277,16 @@
                             <constraint firstItem="7L7-Hd-9FZ" firstAttribute="top" secondItem="ivf-Gs-ESm" secondAttribute="bottom" id="0WR-SA-XFk"/>
                             <constraint firstItem="lJd-ER-4DF" firstAttribute="top" secondItem="7L7-Hd-9FZ" secondAttribute="bottom" id="1TQ-Gv-53f"/>
                             <constraint firstAttribute="trailing" secondItem="nfG-Oe-rnx" secondAttribute="trailing" id="3Ch-eQ-zZ4"/>
+                            <constraint firstAttribute="trailing" secondItem="ayl-bI-xhL" secondAttribute="trailing" id="BMG-Yu-Cwc"/>
+                            <constraint firstItem="lJd-ER-4DF" firstAttribute="top" secondItem="ayl-bI-xhL" secondAttribute="bottom" id="Is5-2V-eYJ"/>
                             <constraint firstAttribute="width" secondItem="Zbv-0K-blU" secondAttribute="width" id="L0L-do-h0F"/>
                             <constraint firstAttribute="bottom" secondItem="nfG-Oe-rnx" secondAttribute="bottom" id="R1c-yB-Tjj"/>
                             <constraint firstItem="nfG-Oe-rnx" firstAttribute="top" secondItem="Vow-wl-qo5" secondAttribute="top" id="Ur3-JL-uam"/>
                             <constraint firstItem="7L7-Hd-9FZ" firstAttribute="leading" secondItem="Vow-wl-qo5" secondAttribute="leading" id="aLd-2u-hgc"/>
+                            <constraint firstItem="ayl-bI-xhL" firstAttribute="leading" secondItem="Vow-wl-qo5" secondAttribute="leading" id="g8h-3l-bfL"/>
                             <constraint firstItem="nfG-Oe-rnx" firstAttribute="leading" secondItem="Vow-wl-qo5" secondAttribute="leading" id="jDl-BD-DIU"/>
                             <constraint firstAttribute="trailing" secondItem="7L7-Hd-9FZ" secondAttribute="trailing" id="tOp-Ls-9vf"/>
+                            <constraint firstItem="ayl-bI-xhL" firstAttribute="top" secondItem="ivf-Gs-ESm" secondAttribute="bottom" id="wKv-d3-lbA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Current Mars Weather" id="35L-Zm-clq"/>
@@ -321,10 +330,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="224.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bbQ-SJ-AQT" userLabel="Original Stack">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e9V-Zp-Ozf" userLabel="Day/Atmosphere Stack">
-                                                            <rect key="frame" x="0.0" y="31.5" width="125" height="45"/>
+                                                            <rect key="frame" x="0.0" y="27.5" width="125" height="45"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sol 1800" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6r-mb-C7h">
                                                                     <rect key="frame" x="27.5" y="0.0" width="70.5" height="22.5"/>
@@ -340,14 +349,14 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="juQ-Q5-HHQ">
-                                                            <rect key="frame" x="125" y="0.0" width="125" height="107.5"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sunny" translatesAutoresizingMaskIntoConstraints="NO" id="juQ-Q5-HHQ">
+                                                            <rect key="frame" x="125" y="0.0" width="125" height="100"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="PwK-N3-luW"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sUR-Ee-jaY" userLabel="High/Low Stack">
-                                                            <rect key="frame" x="250" y="31.5" width="125" height="45"/>
+                                                            <rect key="frame" x="250" y="27.5" width="125" height="45"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="220.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eae-7a-Svf">
                                                                     <rect key="frame" x="39" y="0.0" width="47.5" height="22.5"/>
@@ -371,10 +380,10 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8nx-Ad-8kD" userLabel="More Detail Stack">
-                                                    <rect key="frame" x="0.0" y="117.5" width="375" height="107"/>
+                                                    <rect key="frame" x="0.0" y="110" width="375" height="114.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1jX-oX-Qd3" userLabel="Wind Stack">
-                                                            <rect key="frame" x="0.0" y="12" width="125" height="83.5"/>
+                                                            <rect key="frame" x="0.0" y="15.5" width="125" height="83.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="—" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDp-Y4-Rzz">
                                                                     <rect key="frame" x="44" y="0.0" width="37" height="64"/>
@@ -391,7 +400,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7dm-oj-AfN">
-                                                            <rect key="frame" x="125" y="31" width="125" height="45.5"/>
+                                                            <rect key="frame" x="125" y="34.5" width="125" height="45.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzI-DU-6FP">
                                                                     <rect key="frame" x="38" y="0.0" width="49.5" height="19.5"/>
@@ -408,7 +417,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qjt-bv-zDT">
-                                                            <rect key="frame" x="250" y="31" width="125" height="45.5"/>
+                                                            <rect key="frame" x="250" y="34.5" width="125" height="45.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFq-MN-ULg">
                                                                     <rect key="frame" x="40.5" y="0.0" width="44" height="19.5"/>
@@ -510,4 +519,8 @@
             <point key="canvasLocation" x="805.60000000000002" y="103.89805097451276"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Mars" width="1024" height="1024"/>
+        <image name="Sunny" width="80" height="80"/>
+    </resources>
 </document>

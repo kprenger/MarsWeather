@@ -40,6 +40,7 @@ class HistoricalWeatherTableViewCell: UITableViewCell {
             return
         }
         
+        atmosOpacityImageView.image = weatherData.atmosphericOpacity.image()
         atmosOpacityLabel.text = weatherData.atmosphericOpacity.rawValue
         highTempLabel.text = weatherData.getHighTempString()
         lowTempLabel.text = weatherData.getLowTempString()

@@ -75,6 +75,7 @@ class CurrentWeatherViewController: UIViewController {
         
         loadingOverlay.isHidden = true
         
+        atmosOpacityImageView.image = weatherData.atmosphericOpacity.image()
         atmosOpacityLabel.text = weatherData.atmosphericOpacity.rawValue
         dateLabel.text = weatherData.earthDate.longDateString()
         highTempLabel.text = weatherData.getHighTempString()

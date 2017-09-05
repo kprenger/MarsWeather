@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // Possible values for atmospheric opacity were gathered from the data source's XML
 // http://cab.inta-csic.es/rems/rems_weather.xml
@@ -60,6 +61,13 @@ enum AtmosphericOpacity: String {
         case values.sunny: self = .sunny
         case values.windy: self = .windy
         default: self = .unknown
+        }
+    }
+    
+    func image() -> UIImage {
+        switch self {
+        case .sunny: return #imageLiteral(resourceName: "Sunny")
+        default: return #imageLiteral(resourceName: "Sunny")
         }
     }
 }
